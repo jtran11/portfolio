@@ -5,7 +5,10 @@ export default function Hero() {
         Product Designer · Available Now
       </p>
 
-      <h1 className="font-serif italic font-light leading-[0.88] tracking-tight text-[clamp(64px,10vw,160px)] text-text mb-12">
+      <h1
+        className="font-serif italic font-light leading-[0.88] tracking-tight text-[clamp(64px,10vw,160px)] text-text mb-12"
+        style={{ textShadow: "0 0 120px rgba(196,154,60,0.15), 0 0 60px rgba(139,92,246,0.08)" }}
+      >
         Design that
         <br />
         moves the

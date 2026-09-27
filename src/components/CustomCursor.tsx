@@ -1,19 +1,20 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 export default function CustomCursor() {
   const dotRef = useRef<HTMLDivElement>(null);
   const ringRef = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
-    setVisible(true);
 
     const dot = dotRef.current;
     const ring = ringRef.current;
     if (!dot || !ring) return;
+
+    dot.style.opacity = "1";
+    ring.style.opacity = "1";
 
     let mouseX = 0, mouseY = 0;
     let ringX = 0, ringY = 0;
@@ -40,12 +41,10 @@ export default function CustomCursor() {
     };
   }, []);
 
-  if (!visible) return null;
-
   return (
     <>
-      <div ref={dotRef} className="cursor-dot" />
-      <div ref={ringRef} className="cursor-ring" />
+      <div ref={dotRef} className="cursor-dot" style={{ opacity: 0 }} />
+      <div ref={ringRef} className="cursor-ring" style={{ opacity: 0 }} />
     </>
   );
 }
