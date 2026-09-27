@@ -20,7 +20,7 @@ export default function MarqueeBar() {
         {[...items, ...items].map((item, i) => (
           <span key={i} className="text-muted text-sm font-mono mx-10">
             {item}
-            <span className="text-accent mx-10">☾</span>
+            <span className="text-accent mx-10">✦</span>
           </span>
         ))}
       </div>
