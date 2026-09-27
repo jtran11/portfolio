@@ -1,7 +1,5 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import PasswordGate, { isAuthenticated, setAuthenticated } from "./PasswordGate";
 import CustomCursor from "./CustomCursor";
 import Nav from "./sections/Nav";
 import Hero from "./sections/Hero";
@@ -59,17 +57,6 @@ function PortfolioView() {
 }
 
 export default function PortfolioClient() {
-  const [authed, setAuthed] = useState(false);
-  const [isHydrated, setIsHydrated] = useState(false);
-
-  useEffect(() => {
-    setAuthed(isAuthenticated());
-    setIsHydrated(true);
-  }, []);
-
-  if (!isHydrated) return <div className="min-h-screen bg-bg" />;
-  if (!authed) return <PasswordGate onUnlock={() => { setAuthenticated(); setAuthed(true); }} />;
-
   return (
     <>
       <CustomCursor />
