@@ -21,7 +21,7 @@ function Footer() {
       </span>
       <div className="flex items-center gap-6">
         <a
-          href="[your-linkedin-url]"
+          href="https://www.linkedin.com/in/jenn-tran/"
           className="text-muted text-sm hover:text-text transition-colors"
         >
           LinkedIn

@@ -29,7 +29,7 @@ export default function About() {
           </h3>
           <div className="w-12 h-px bg-accent mb-8" />
           <p className="text-accent text-xs font-mono tracking-widest uppercase">
-            Based in [City] · Available [Month Year]
+            Based in Orange County, CA
           </p>
         </ScrollReveal>
 
@@ -37,9 +37,8 @@ export default function About() {
           <div className="flex flex-col gap-6">
             <p className="text-text text-lg leading-relaxed">
               Most designers work from the brief. I work from the problem.
-              I&rsquo;ve shipped product at [type of company], and the through-line
-              is always the same: get close to users, understand the business,
-              and ship something that moves a number.
+              The through-line is always the same: get close to users,
+              understand the business, and ship something that moves a number.
             </p>
             <p className="text-muted text-base leading-relaxed">
               I&rsquo;m comfortable in ambiguity, fast to build conviction, and

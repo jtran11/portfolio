@@ -12,8 +12,7 @@ const methods = [
 
 const facts = [
   { value: "5+", label: "Years in product design" },
-  { value: "[X]", label: "Products shipped end-to-end" },
-  { value: "[X]", label: "Team size led" },
+  { value: "3", label: "Designers led" },
 ];
 
 export default function Skills() {
