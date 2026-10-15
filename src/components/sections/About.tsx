@@ -1,7 +1,7 @@
 import ScrollReveal from "@/components/ScrollReveal";
 
 const tools = [
-  "Figma", "Framer", "Maze", "FullStory", "Miro",
+  "Claude", "Claude Code", "Figma", "Framer", "Maze", "FullStory", "Miro",
   "Notion", "Linear", "SQL (basic)", "User Interviews",
   "Jobs-to-be-Done", "Design Sprints", "A/B Testing",
 ];
@@ -45,7 +45,9 @@ export default function About() {
               obsessive about outcomes — not deliverables. I&rsquo;ve led design
               from zero-to-one, scaled systems across large teams, and
               collaborated with PMs and engineers who care about results as
-              much as I do.
+              much as I do. Lately that means designing AI products, and
+              encoding design judgment into Claude skills so a coding agent
+              ships it consistently.
             </p>
 
             <div className="pt-4">

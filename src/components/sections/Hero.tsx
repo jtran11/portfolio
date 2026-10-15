@@ -2,7 +2,7 @@ export default function Hero() {
   return (
     <section className="min-h-svh flex flex-col justify-end pb-16 md:pb-24 px-6 md:px-12 pt-28">
       <p className="font-mono text-accent text-xs tracking-[0.3em] uppercase mb-8">
-        Product Designer · Available Now
+        Product Design Leader · Open to Roles
       </p>
 
       <h1 className="font-serif italic font-light leading-[0.88] tracking-tight text-[clamp(64px,10vw,160px)] text-text mb-12">
@@ -15,8 +15,9 @@ export default function Hero() {
 
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
         <p className="text-muted text-lg leading-relaxed max-w-[440px]">
-          I research fast, build conviction, and ship products that change how
-          businesses perform. 5+ years across early-stage and scaled teams.
+          I design AI products and build with AI — most recently a voice AI
+          that answers every service call for myKaarma&rsquo;s dealerships. 8 years
+          in B2B SaaS, leading a team while staying hands-on.
         </p>
         <div className="flex items-center gap-6 shrink-0">
           <a

@@ -1,17 +1,19 @@
 import ScrollReveal from "@/components/ScrollReveal";
 
 const tools = [
-  "Figma", "Framer", "Maze", "FullStory", "Miro",
-  "Notion", "Linear", "SQL (basic)",
+  "Claude", "Claude Code", "Figma", "Framer", "Maze",
+  "FullStory", "LogRocket", "UserVoice", "Miro", "Notion",
+  "Linear", "SQL (basic)",
 ];
 
 const methods = [
   "User Interviews", "Jobs-to-be-Done", "Design Sprints",
   "A/B Testing", "Usability Testing", "Competitive Analysis",
+  "Conversational UX", "Human-in-the-Loop Review",
 ];
 
 const facts = [
-  { value: "5+", label: "Years in product design" },
+  { value: "8", label: "Years in product design" },
   { value: "3", label: "Designers led" },
 ];
 

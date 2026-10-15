@@ -22,9 +22,9 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Jenn Tran — Product Designer",
+  title: "Jenn Tran — Product Design Leader",
   description:
-    "Product designer who moves the needle. I research fast, build conviction, and ship products that change how businesses perform.",
+    "Product design leader who designs AI products and builds with AI. 8 years in B2B SaaS, most recently shipping voice AI for automotive dealerships.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

@@ -30,10 +30,10 @@ export const personas: Record<PersonaId, PersonaConfig> = {
     entrySub: "Highlights, resume & availability",
     navCta: { label: "Download Resume →", href: "/resume.pdf" },
     hero: {
-      badge: "Available Now · Product Designer",
+      badge: "Open to Roles · Product Design Leader",
       headline: ["The designer", "who ships."],
       subhead:
-        "5+ years shipping product across early-stage and scaled teams. I move fast, work close to engineering, and I'm looking for a role where design has real leverage.",
+        "8 years shipping B2B SaaS, most recently voice AI. I move fast, work close to engineering, and I'm looking for a role where design has real leverage.",
       primaryCta: { label: "Download Resume ↓", href: "/resume.pdf" },
       secondaryCta: { label: "See my work →", href: "#work" },
     },
@@ -44,7 +44,7 @@ export const personas: Record<PersonaId, PersonaConfig> = {
     contact: {
       badge: "Open to new roles",
       headline: "Let's find out\nif we're a fit.",
-      body: "I'm looking for teams building something ambitious where design has a seat at the table from day one. Send me a note — happy to chat.",
+      body: "I'm looking for a thoughtful, well-run team where design has a seat at the table from day one. Send me a note — happy to chat.",
     },
   },
 
@@ -54,7 +54,7 @@ export const personas: Record<PersonaId, PersonaConfig> = {
     entrySub: "Process, thinking & approach",
     navCta: { label: "Let's build together →", href: "mailto:jenntranux@gmail.com" },
     hero: {
-      badge: "Product Designer · Builder",
+      badge: "Product Design Leader · Builder",
       headline: ["I work closest", "to the problem."],
       subhead:
         "Not the brief. I get close to users, pressure-test assumptions early, and ship things that move numbers. Tell me what you're trying to build.",
@@ -78,7 +78,7 @@ export const personas: Record<PersonaId, PersonaConfig> = {
     entrySub: "Full portfolio, no filter",
     navCta: { label: "Let's work together →", href: "mailto:jenntranux@gmail.com" },
     hero: {
-      badge: "Product Designer",
+      badge: "Product Design Leader",
       headline: ["Design that", "moves the", "needle."],
       subhead:
         "I work closest to the problem — not the brief. I research fast, build conviction quickly, and ship products that change how businesses grow.",
@@ -92,7 +92,7 @@ export const personas: Record<PersonaId, PersonaConfig> = {
     contact: {
       badge: "Available for new roles",
       headline: "Got a problem\nworth solving?",
-      body: "I'm looking for a team building something ambitious — where design has real leverage and outcomes matter more than process.",
+      body: "I'm looking for a thoughtful, well-run team building AI-powered products — where design has a real seat at the table.",
     },
   },
 };

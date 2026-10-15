@@ -14,8 +14,9 @@ export default function ContactSection() {
             worth solving?
           </h2>
           <p className="text-muted text-lg max-w-lg mb-12 leading-relaxed">
-            I&rsquo;m looking for a team building something ambitious — where design
-            has real leverage and outcomes matter more than process.
+            I&rsquo;m looking for a thoughtful, well-run team building AI-powered
+            products — where design has a real seat at the table and people
+            do their best work at a sustainable pace.
           </p>
           <a
             href="mailto:jenntranux@gmail.com"
