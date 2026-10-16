@@ -16,7 +16,8 @@ export default function Hero() {
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
         <p className="text-muted text-lg leading-relaxed max-w-[440px]">
           I design AI products and build with AI — most recently a voice AI
-          that answers every service call for myKaarma&rsquo;s dealerships. 8 years
+          that cut unanswered service calls from 82% to 46% and quadrupled
+          appointment bookings for myKaarma&rsquo;s dealerships. 8 years
           in B2B SaaS, leading a team while staying hands-on.
         </p>
         <div className="flex items-center gap-6 shrink-0">
