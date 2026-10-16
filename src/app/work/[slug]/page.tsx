@@ -1,6 +1,7 @@
 import { projects } from "@/lib/projects";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import CustomCursor from "@/components/CustomCursor";
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
@@ -25,6 +26,8 @@ export default async function CaseStudy(props: PageProps<"/work/[slug]">) {
   const nextProject = projects[(currentIndex + 1) % projects.length];
 
   return (
+    <>
+    <CustomCursor />
     <div className="min-h-screen bg-bg text-text font-sans">
       {/* Nav */}
       <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-5 bg-bg/90 backdrop-blur-sm">
@@ -184,5 +187,6 @@ export default async function CaseStudy(props: PageProps<"/work/[slug]">) {
         </a>
       </footer>
     </div>
+    </>
   );
 }
