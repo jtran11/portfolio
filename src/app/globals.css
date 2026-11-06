@@ -37,6 +37,12 @@ body {
   * { cursor: none; }
 }
 
+/* The login page has no custom cursor, so give it the normal system cursor. */
+.native-cursor,
+.native-cursor * { cursor: auto; }
+.native-cursor input { cursor: text; }
+.native-cursor button { cursor: pointer; }
+
 ::selection {
   background-color: #c49a3c;
   color: #0c0a07;

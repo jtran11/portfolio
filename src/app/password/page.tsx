@@ -1,6 +1,7 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { authConfigured, safeEqual } from "@/lib/auth";
+import PasswordField from "@/components/PasswordField";
 
 type Props = {
   searchParams: Promise<{ error?: string; from?: string }>;
@@ -39,7 +40,7 @@ export default async function PasswordPage({ searchParams }: Props) {
 
   return (
     <div
-      className="min-h-screen bg-bg flex flex-col items-center justify-center px-6"
+      className="native-cursor min-h-screen bg-bg flex flex-col items-center justify-center px-6"
       style={{ animation: "fadeIn 0.6s ease forwards" }}
     >
       <div className="w-full max-w-sm flex flex-col gap-8">
@@ -55,14 +56,7 @@ export default async function PasswordPage({ searchParams }: Props) {
         <form action={authenticate} className="flex flex-col gap-3">
           <input type="hidden" name="from" value={from} />
           <div>
-            <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              autoFocus
-              autoComplete="current-password"
-              className="w-full bg-surface border border-border px-4 py-3 text-sm text-text placeholder:text-muted focus:outline-none focus:border-accent transition-colors"
-            />
+            <PasswordField />
             {hasError && (
               <p className="mt-2 text-xs text-muted font-mono">
                 Incorrect password. Try again.
