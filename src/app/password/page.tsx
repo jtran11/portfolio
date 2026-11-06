@@ -1,5 +1,6 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import { authConfigured, safeEqual } from "@/lib/auth";
 
 type Props = {
   searchParams: Promise<{ error?: string; from?: string }>;
@@ -13,7 +14,9 @@ async function authenticate(formData: FormData) {
   // Guard against open redirect — only allow same-origin paths
   const from = rawFrom?.startsWith("/") && !rawFrom.startsWith("//") ? rawFrom : "/";
 
-  if (password !== process.env.AUTH_PASSWORD) {
+  if (!authConfigured() || !safeEqual(password, process.env.AUTH_PASSWORD)) {
+    // Slow down guessing a little
+    await new Promise((r) => setTimeout(r, 1000));
     redirect(`/password?error=1&from=${encodeURIComponent(from)}`);
   }
 
