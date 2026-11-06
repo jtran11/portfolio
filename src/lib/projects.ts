@@ -3,6 +3,18 @@ export interface Metric {
   label: string;
 }
 
+export interface Benchmark {
+  metric: string;
+  mine: string;
+  industry: string;
+  delta: "above" | "below" | "gap";
+}
+
+export interface Reflection {
+  gap: string;
+  improvement: string;
+}
+
 export interface Project {
   slug: string;
   number: string;
@@ -17,6 +29,8 @@ export interface Project {
   problem: string;
   approach: string;
   outcome: string;
+  benchmarks?: Benchmark[];
+  reflections?: Reflection[];
 }
 
 export const projects: Project[] = [
@@ -31,18 +45,38 @@ export const projects: Project[] = [
     year: "2025",
     tags: ["Voice AI", "Conversational UX", "0→1", "Automotive"],
     metrics: [
-      { value: "[X]", label: "Calls handled to date" },
-      { value: "[X%]", label: "Improvement in call answer rate" },
-      { value: "[X]", label: "Appointments booked without human involvement" },
+      { value: "82% → 46%", label: "Unanswered calls" },
+      { value: "12% → 48%", label: "Appointment booking rate" },
+      { value: "43%", label: "Missed call callback success rate" },
     ],
     overview:
-      "Automotive dealerships lose thousands of dollars a month to unanswered calls. High staff turnover means phones go unattended, and customers who don't get through rarely call back — they go to a competitor. myKaarma's Service Concierge answers every call, greets customers by name, and routes them to the right workflow automatically. I led design as Manager of Product Design alongside senior designer Ruth, taking the product from kickoff in January 2025 to an Alpha launch at a live dealership on February 24, 2025 — eight weeks from concept to production calls.",
+      "Automotive dealerships lose thousands of dollars a month to unanswered calls. High staff turnover means phones go unattended, and customers who don't get through rarely call back — they go to a competitor. myKaarma's Service Concierge answers incoming calls, greets customers by name, and routes them to the right workflow automatically. I led design as Manager of Product Design alongside senior designer Ruth, taking the product from kickoff in January 2025 to an Alpha launch at a live dealership on February 24, 2025 — eight weeks from concept to production calls.",
     problem:
       "Dealers operate with chronic understaffing and average service advisor tenures under a year. The result: calls go unanswered, new staff don't know how to route them correctly, and real business walks out the door. The opportunity was clear. The design challenge was harder — making an AI feel natural enough that customers would trust it with something as personal as their car, and configurable enough that it could adapt to how each dealership actually operates.",
     approach:
       "We scoped the Alpha deliberately to a single workflow: appointment booking. Rather than build everything at once, we needed real call data to understand how customers actually talk before we could expand. That constraint proved right — the edge cases we hadn't anticipated showed up fast. We quickly discovered we had no visibility into why individual calls routed the way they did. When a call landed in the wrong funnel, we couldn't trace it. I designed a call debugging interface that visualized every call's path through the routing logic — this became the core tool for iterating on the model. We also had to solve for dealer variability: every dealership has different departments, staff configurations, and routing preferences. The system needed to be fully configurable without requiring any technical knowledge from the dealer side. After launch we expanded to vehicle status updates and open-ended Q&A, and built a human-in-the-loop review workflow that let our team flag and retrain from misinterpreted calls — critical for handling accent variability and ambiguous caller input.",
     outcome:
-      "Service Concierge is now live across multiple dealerships, handling appointment booking, vehicle status inquiries, and general call routing. [X] calls handled to date. Dealer call answer rate improved from [X%] to [X%]. [X] appointments booked without human involvement. The call debugging tooling we built cut average time to diagnose a routing issue from [X] to [X].",
+      "Service Concierge is now live across multiple dealerships, cutting unanswered calls from 82% to 46%. Appointment booking rose from 12% to 48%, roughly double the industry benchmark of 15–25%. Missed calls are automatically transcribed, matched to existing customer records, and queued for callback, with a 43% callback success rate. The call debugging tooling cut routing diagnosis time significantly and became the primary tool for model iteration post-launch.",
+    benchmarks: [
+      { metric: "Call answer rate", mine: "54%", industry: "30–40%", delta: "above" },
+      { metric: "Appointment booking rate", mine: "48%", industry: "15–25%", delta: "above" },
+      { metric: "Missed call callback success", mine: "43%", industry: "10–15%", delta: "above" },
+      { metric: "Escalation rate", mine: "42%", industry: "~20–30%", delta: "gap" },
+    ],
+    reflections: [
+      {
+        gap: "42% of calls escalated to a human — primarily pricing inquiries and clarification calls the bot couldn't resolve.",
+        improvement: "Intent classification for pricing and complex service questions is on the roadmap. Given more time pre-launch, I would have pushed for a confidence threshold system: if the bot's certainty drops below a threshold, it proactively hands off rather than attempting a response and failing.",
+      },
+      {
+        gap: "The bot struggled with uncommon names and non-native accents, leading to mismatched customer records and frustrating repeat-callers.",
+        improvement: "I'd advocate for a phonetic matching layer in the customer lookup logic, and work with the ML team earlier to test against a more diverse call sample before launch.",
+      },
+      {
+        gap: "No distinction between routine calls and emergencies — a customer stranded in their vehicle got the same routing as a standard appointment request.",
+        improvement: "Emergency intent detection should have been scoped into the Alpha. The fix is a small set of high-signal phrases ('stranded', 'tow', 'won't start') that trigger an immediate human escalation path, bypassing the standard booking flow.",
+      },
+    ],
   },
   {
     slug: "mk-blue",
@@ -79,7 +113,7 @@ export const projects: Project[] = [
     year: "2026",
     tags: ["Design Systems", "AI", "Replatforming", "Automotive"],
     metrics: [
-      { value: "[X]", label: "UX skills documented" },
+      { value: "35+", label: "UX rules documented" },
       { value: "[X]", label: "Known issues addressed at scale" },
       { value: "[X]", label: "Screens replatformed to date" },
     ],
@@ -90,6 +124,6 @@ export const projects: Project[] = [
     approach:
       "I built a structured intake system that pulls from every feedback channel we have — support tickets, LogRocket session recordings, UserVoice submissions, and cross-functional input from support, product, and engineering. Each issue is triaged by severity (Critical, Gap, or Consider) and documented in a consistent format: what to look for in the code, why it's a failure from the user's perspective, exactly how to fix it, what not to do, and a before/after code example. The agent reads these skill files while rewriting components and applies every relevant fix automatically. Beyond individual issues, I also used the replatform to define the foundational interaction framework we never had — fixing navigation architecture and establishing consistent patterns for how our app handles modals and popups across every surface. The rewrite is intentionally phased by product, starting with the communication module and shell. Every component it touches comes out the other side with years of known issues resolved.",
     outcome:
-      "claude-sutras now contains [X] skills across [X] categories. The agent applies them automatically as it rewrites components — fixing in minutes what would have taken months of manual design review. The communication module and shell are currently in progress, with the full platform to follow product by product. Issues that sat in the backlog for years are being resolved at scale without an additional design cycle per component.",
+      "claude-sutras now contains 35+ UX rules. The agent applies them automatically as it rewrites components — fixing in minutes what would have taken months of manual design review. The communication module and shell are currently in progress, with the full platform to follow product by product. Issues that sat in the backlog for years are being resolved at scale without an additional design cycle per component.",
   },
 ];
